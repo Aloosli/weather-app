@@ -5,6 +5,7 @@ const getWeather = async (id) => {
   const query = `${id}?apikey=${key}`;
   const response = await fetch(base + query);
   const data = await response.json();
+  
   return data[0];
 };
 // get city information
