@@ -5,6 +5,7 @@ const details = document.querySelector(".details");
 const time = document.querySelector("img.time");
 const icon = document.querySelector(".icon img");
 
+// update the ui
 const updateUI = (data) => {
   console.log(data);
   // destructuring properties
@@ -24,6 +25,8 @@ const updateUI = (data) => {
     card.classList.remove("d-none");
   }
   // update the night/day & icon images
+const iconSrc = `/img/icons/${weather.WeatherIcon}.svg`;  
+icon.setAttribute("src", iconSrc);
 let timeSrc = null;
 if (weather.IsDayTime) {
   timeSrc = "img/day.svg";
