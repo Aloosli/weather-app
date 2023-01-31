@@ -25,18 +25,13 @@ const updateUI = (data) => {
     card.classList.remove("d-none");
   }
   // update the night/day & icon images
-const iconSrc = `/img/icons/${weather.WeatherIcon}.svg`;  
-icon.setAttribute("src", iconSrc);
-let timeSrc = null;
-if (weather.IsDayTime) {
-  timeSrc = "img/day.svg";
-} else {
-  timeSrc = "img/night.svg";
-}
-time.setAttribute("src", timeSrc);
+  const iconSrc = `/img/icons/${weather.WeatherIcon}.svg`;
+  icon.setAttribute("src", iconSrc);
+
+  let timeSrc = weather.IsDayTime ? "img/day.svg" : "img/night.svg";
+
+  time.setAttribute("src", timeSrc);
 };
-
-
 
 const updateCity = async (city) => {
   const cityDetails = await getCity(city);
